@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Gulnora Ayupova · inCruises mustaqil hamkori</title>
+<meta name="description" content="inCruises — kruiz sayohatlari klubi. A’zolik qanday ishlashi va shartlari haqida Gulnora Ayupovadan bepul maslahat oling.">
+<meta name="theme-color" content="#0B1B34">
+<meta property="og:title" content="Dunyoni dengizdan kashf eting · Gulnora Ayupova">
+<meta property="og:description" content="inCruises kruiz sayohatlari klubi haqida bepul maslahat. Ism va raqamingizni qoldiring.">
+<meta property="og:type" content="website">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@400;500;600&display=swap">
+<style>
+  :root{
+    --navy:#0B1B34; --sea:#0F2442; --gold:#C8A96B; --gold-deep:#8A6A32;
+    --ivory:#F5F0E6; --ivory-2:#EDE5D6; --ink:#0B1B34; --muted:#545E73; --line:#D8CDB8;
+    --serif:'Cormorant Garamond', Garamond, 'Times New Roman', serif;
+    --sans:'Jost', Futura, 'Century Gothic', 'Segoe UI', sans-serif;
+    --wrap:1080px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{margin:0;font-family:var(--sans);font-size:17px;line-height:1.6;color:var(--ink);background:var(--ivory)}
+  a{color:inherit}
+  img,svg{display:block}
+  .wrap{max-width:var(--wrap);margin:0 auto;padding:0 20px}
+  .eyebrow{font-size:12px;font-weight:600;letter-spacing:.28em;text-transform:uppercase}
+  :focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+
+  /* Top bar */
+  .top{background:var(--navy);color:var(--ivory)}
+  .top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:18px;padding-bottom:18px}
+  .brand{display:flex;flex-direction:column;gap:4px;line-height:1;text-decoration:none}
+  .brand b{font-size:19px;font-weight:600}
+  .brand span{font-size:10.5px;font-weight:500;letter-spacing:.3em;color:var(--gold)}
+  .call{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 16px;border:1px solid rgba(200,169,107,.55);border-radius:999px;text-decoration:none;font-size:15px;font-weight:500;color:var(--ivory)}
+  .call:hover{background:rgba(200,169,107,.12)}
+  .call svg{width:18px;height:18px}
+
+  /* Hero */
+  .hero{position:relative;background:var(--navy);color:var(--ivory);overflow:hidden}
+  .hero .wrap{position:relative;padding-top:56px;padding-bottom:64px}
+  .hero .eyebrow{color:var(--gold)}
+  .hero h1{font-family:var(--serif);font-weight:600;font-size:clamp(44px,9vw,84px);line-height:1;letter-spacing:-.005em;margin:18px 0 22px;max-width:12ch;text-wrap:balance}
+  .hero p.lead{font-size:clamp(17px,2.2vw,20px);color:#DCD6CA;max-width:34em;margin:0 0 30px;text-wrap:pretty}
+  .who{display:flex;align-items:center;gap:12px;margin:0 0 30px;font-size:15px;color:#DCD6CA}
+  .who strong{font-family:var(--serif);font-size:24px;font-weight:600;color:var(--ivory)}
+  .who i{width:28px;height:1px;background:var(--gold)}
+  .ctas{display:flex;flex-wrap:wrap;gap:12px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 26px;border-radius:999px;font-family:var(--sans);font-size:16px;font-weight:600;letter-spacing:.02em;text-decoration:none;cursor:pointer;border:1px solid transparent;transition:transform .15s ease, background .15s ease}
+  .btn:active{transform:translateY(1px)}
+  .btn-gold{background:var(--gold);color:var(--navy)}
+  .btn-gold:hover{background:#D6BA80}
+  .btn-ghost{border-color:rgba(245,240,230,.4);color:var(--ivory);background:transparent}
+  .btn-ghost:hover{background:rgba(245,240,230,.08)}
+  .btn svg{width:18px;height:18px}
+  .horizon{position:relative;height:92px;background:var(--sea)}
+  .horizon::before{content:"";position:absolute;left:0;right:0;top:0;height:1.5px;background:var(--gold)}
+  .horizon .ship{position:absolute;right:max(20px, calc((100% - var(--wrap)) / 2 + 20px));top:-46px;width:min(200px,42vw);height:auto}
+  .horizon .tag{position:absolute;left:max(20px, calc((100% - var(--wrap)) / 2 + 20px));top:26px;font-family:var(--serif);font-style:italic;font-size:19px;color:#C9C3B6}
+
+  /* Sections */
+  section.block{padding:72px 0}
+  h2{font-family:var(--serif);font-weight:600;font-size:clamp(34px,5vw,48px);line-height:1.05;margin:12px 0 18px;text-wrap:balance}
+  .block .eyebrow{color:var(--gold-deep)}
+  .intro{max-width:40em;color:#2B3446;margin:0 0 36px;text-wrap:pretty}
+  .facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+  .fact{background:var(--ivory);padding:22px 18px}
+  .fact b{display:block;font-family:var(--serif);font-weight:600;font-size:clamp(34px,5vw,46px);line-height:1;color:var(--navy)}
+  .fact span{display:block;margin-top:8px;font-size:15px;line-height:1.4;color:var(--muted)}
+  .note{font-size:13.5px;color:var(--muted);margin:14px 0 0}
+
+  .steps{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr));margin-top:34px}
+  .step{position:relative;background:#FBF8F2;border:1px solid var(--line);padding:26px 24px 24px}
+  .step .num{font-family:var(--serif);font-weight:600;font-size:46px;line-height:1;color:var(--gold-deep)}
+  .step h3{font-size:14px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;margin:16px 0 8px}
+  .step p{margin:0;color:#2B3446;font-size:16px}
+  .fineprint{margin:22px 0 0;padding:16px 18px;border:1px dashed #B9AE97;font-size:15px;color:#2B3446;max-width:44em}
+
+  /* Lead form — ticket */
+  .lead-sec{background:var(--navy);padding:72px 0}
+  .lead-sec .eyebrow{color:var(--gold)}
+  .lead-sec h2{color:var(--ivory)}
+  .lead-sec .intro{color:#DCD6CA}
+  .ticket{display:grid;grid-template-columns:minmax(0,1fr);background:var(--ivory);color:var(--ink);box-shadow:0 30px 60px rgba(0,0,0,.28)}
+  .t-main{padding:28px 22px 26px}
+  .t-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding-bottom:14px;border-bottom:1.5px solid var(--gold)}
+  .t-head .eyebrow{color:var(--navy);font-size:11.5px}
+  .t-head b{font-size:15px;font-weight:600}
+  .route{display:flex;align-items:flex-end;gap:14px;margin:22px 0 24px}
+  .route div small{display:block;font-size:11px;font-weight:500;letter-spacing:.22em;color:var(--muted)}
+  .route div strong{display:block;font-family:var(--serif);font-weight:600;font-size:40px;line-height:.9;margin-top:6px}
+  .route .mid{flex:1;display:flex;align-items:center;gap:8px;padding-bottom:8px}
+  .route .mid i{flex:1;border-top:2px dotted #8C93A3}
+  .route .mid svg{width:44px;height:auto}
+  .route .to{text-align:right}
+  form{display:grid;gap:18px}
+  .field label{display:block;font-size:11.5px;font-weight:600;letter-spacing:.22em;color:var(--muted);margin-bottom:6px}
+  .field input{width:100%;min-height:50px;border:0;border-bottom:1.5px solid var(--navy);background:transparent;font-family:var(--sans);font-size:20px;color:var(--ink);padding:6px 2px;border-radius:0}
+  .field input:focus{outline:none;border-bottom-color:var(--gold-deep);background:rgba(200,169,107,.08)}
+  .field input::placeholder{color:#9AA0AD}
+  .phone{display:flex;align-items:stretch}
+  .phone span{display:flex;align-items:center;padding:0 10px 0 2px;font-size:20px;border-bottom:1.5px solid var(--navy);color:var(--ink)}
+  .phone input{flex:1}
+  .err{min-height:0;margin:6px 0 0;font-size:14px;color:#A12A1B}
+  .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+  .submit{width:100%;margin-top:4px;background:var(--navy);color:var(--ivory)}
+  .submit:hover{background:#13284A}
+  .submit[disabled]{opacity:.7;cursor:progress}
+  .privacy{margin:2px 0 0;font-size:13.5px;color:var(--muted)}
+  .alert{margin:4px 0 0;padding:14px 16px;border:1px solid #D9B9A9;background:#FBEFEA;font-size:15px}
+  .alert a{font-weight:600}
+  .t-stub{position:relative;padding:24px 22px 28px;border-top:2px dashed #A9AEBA;background:var(--ivory-2);display:flex;flex-direction:column;gap:6px}
+  .t-stub small{font-size:11px;font-weight:500;letter-spacing:.22em;color:var(--muted)}
+  .t-stub strong{font-family:var(--serif);font-weight:600;font-size:28px;line-height:1.1}
+  .t-stub a{text-decoration:none;font-size:17px;font-weight:500}
+  .t-stub a:hover{text-decoration:underline}
+  .t-stub .sep{height:14px}
+  .done{text-align:left;padding:8px 0 4px}
+  .done h3{font-family:var(--serif);font-weight:600;font-size:34px;line-height:1.1;margin:0 0 10px}
+  .done p{margin:0 0 18px;color:#2B3446}
+
+  /* Contacts + footer */
+  .contacts{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr));margin-top:28px}
+  .contact{display:flex;align-items:center;gap:16px;min-height:76px;padding:16px 20px;border:1px solid var(--line);background:#FBF8F2;text-decoration:none}
+  .contact:hover{border-color:var(--gold-deep)}
+  .contact svg{width:26px;height:26px;flex-shrink:0;color:var(--gold-deep)}
+  .contact small{display:block;font-size:11.5px;font-weight:600;letter-spacing:.22em;color:var(--muted)}
+  .contact span{display:block;font-size:19px;font-weight:500}
+  footer{background:var(--navy);color:#B8B3A8;font-size:14px;padding:36px 0 44px}
+  footer p{margin:0 0 10px;max-width:52em}
+  footer a{color:var(--ivory)}
+
+  @media (min-width:760px){
+    .wrap{padding:0 32px}
+    .hero .wrap{padding-top:84px;padding-bottom:96px}
+    .horizon{height:110px}
+    .horizon .ship{top:-58px;width:240px;right:max(32px, calc((100% - var(--wrap)) / 2 + 32px))}
+    .horizon .tag{left:max(32px, calc((100% - var(--wrap)) / 2 + 32px));top:30px}
+    .facts{grid-template-columns:repeat(4,minmax(0,1fr))}
+    .fact{padding:28px 24px}
+    .ticket{grid-template-columns:minmax(0,1fr) 300px}
+    .t-main{padding:36px 40px 36px}
+    .t-stub{border-top:0;border-left:2px dashed #A9AEBA;padding:36px 30px;justify-content:center}
+    .route div strong{font-size:52px}
+    section.block,.lead-sec{padding:96px 0}
+  }
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#" aria-label="inCruises mustaqil hamkori — bosh sahifa">
+      <b>inCruises</b>
+      <span>MUSTAQIL HAMKOR</span>
+    </a>
+    <a class="call" href="tel:+998973401360">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#C8A96B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3.5h3.2l1.8 4.6-2.3 1.5a11.5 11.5 0 0 0 6.7 6.7l1.5-2.3 4.6 1.8V19a1.9 1.9 0 0 1-2 1.9A16.5 16.5 0 0 1 3.1 5.5 1.9 1.9 0 0 1 5 3.5z"/></svg>
+      Qo‘ng‘iroq qilish
+    </a>
+  </div>
+</header>
+
+<main>
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="wrap">
+      <div class="eyebrow">Sayohatga taklifnoma</div>
+      <h1 id="hero-title">Dunyoni dengizdan kashf eting.</h1>
+      <p class="lead">inCruises — taklif asosida a’zo bo‘linadigan kruiz sayohatlari klubi. Klub qanday ishlashi, imkoniyatlari va shartlarini bepul, tushunarli tilda tushuntirib beraman.</p>
+      <div class="who"><i></i><span><strong>Gulnora Ayupova</strong> · mustaqil hamkor</span></div>
+      <div class="ctas">
+        <a class="btn btn-gold" href="#forma">Bepul maslahat olish</a>
+        <a class="btn btn-ghost" href="https://t.me/inkruizguliston" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 3.5 2.8 10.6l6.9 2.6 2.6 6.9z"/><path d="M9.7 13.2l5.6-5.6"/></svg>
+          Telegram kanal
+        </a>
+      </div>
+    </div>
+    <div class="horizon" aria-hidden="true">
+      <svg class="ship" viewBox="0 0 60 26" fill="none" stroke="#C8A96B" stroke-width="1" stroke-linejoin="round" stroke-linecap="round">
+        <path d="M3 17H57L52.5 22.5H8.5Z" fill="#0B1B34"/>
+        <path d="M9 17V13H50L52 17"/>
+        <path d="M13 13V9.5H45L46.5 13"/>
+        <path d="M18 9.5V6.5H38V9.5"/>
+        <path d="M30 6.5V3H35V6.5"/>
+        <path d="M12.5 19.8H48" stroke-dasharray="1.1 1.9"/>
+      </svg>
+      <div class="tag">Kruizlar · mehmonxonalar · kurortlar</div>
+    </div>
+  </section>
+
+  <section class="block" aria-labelledby="about-title">
+    <div class="wrap">
+      <div class="eyebrow">Klub haqida</div>
+      <h2 id="about-title">inCruises nima?</h2>
+      <p class="intro">inCruises — 2016-yilda tashkil etilgan, obuna asosida ishlaydigan sayohat klubi. U inGroup International kompaniyasi tarkibida, bosh ofisi Puerto-Rikoda. Klubning o‘z kemalari yo‘q: u kruiz kompaniyalari, mehmonxona va kurortlar bilan hamkorlik qilib, a’zolariga maxsus a’zolik narxlarini taqdim etadi.</p>
+      <div class="facts">
+        <div class="fact"><b>2016</b><span>yildan beri faoliyatda</span></div>
+        <div class="fact"><b>700 000+</b><span>mehmon sayohatga band qilingan</span></div>
+        <div class="fact"><b>≈200 000</b><span>kruiz, mehmonxona va kurort varianti</span></div>
+        <div class="fact"><b>17</b><span>tilda xizmat ko‘rsatadi</span></div>
+      </div>
+      <p class="note">Raqamlar inCruises 2026-yilda e’lon qilgan ma’lumotlarga asoslangan.</p>
+    </div>
+  </section>
+
+  <section class="block" style="padding-top:0" aria-labelledby="how-title">
+    <div class="wrap">
+      <div class="eyebrow">Qadamlar</div>
+      <h2 id="how-title">Qanday ishlaydi?</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="num">01</div>
+          <h3>Taklif</h3>
+          <p>Klubga a’zolik taklif orqali bo‘ladi. Siz menga yozasiz yoki qo‘ng‘iroq qilasiz — ro‘yxatdan o‘tishda yordam beraman.</p>
+        </div>
+        <div class="step">
+          <div class="num">02</div>
+          <h3>A’zolik</h3>
+          <p>A’zolar klub narxlaridan foydalanadi va a’zolik davomida ballar to‘playdi. Ballar bilan sayohat narxining bir qismini qoplash mumkin.</p>
+        </div>
+        <div class="step">
+          <div class="num">03</div>
+          <h3>Sayohat</h3>
+          <p>Kruiz, mehmonxona yoki kurortni tanlaysiz. Yo‘nalish tanlash va bron qilishda yoningizda bo‘laman.</p>
+        </div>
+      </div>
+      <p class="fineprint">Oylik to‘lov, ballar qanday ishlashi va a’zolikni bekor qilish tartibini maslahatda batafsil tushuntiraman. A’zo bo‘lishdan oldin a’zolik shartnomasini albatta o‘qib chiqing.</p>
+    </div>
+  </section>
+
+  <section class="lead-sec" id="forma" aria-labelledby="form-title">
+    <div class="wrap">
+      <div class="eyebrow">Shaxsiy taklifnoma</div>
+      <h2 id="form-title">Bepul maslahatga yoziling</h2>
+      <p class="intro">Ismingiz va raqamingizni qoldiring — o‘zim qo‘ng‘iroq qilib, savollaringizga javob beraman.</p>
+
+      <div class="ticket">
+        <div class="t-main">
+          <div class="t-head">
+            <span class="eyebrow">Sayohatga taklifnoma</span>
+            <b>inCruises</b>
+          </div>
+          <div class="route" aria-hidden="true">
+            <div><small>QAYERDAN</small><strong>UZB</strong></div>
+            <div class="mid"><i></i>
+              <svg viewBox="0 0 60 26" fill="none" stroke="#8A6A32" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"><path d="M3 17H57L52.5 22.5H8.5Z"/><path d="M9 17V13H50L52 17"/><path d="M13 13V9.5H45L46.5 13"/><path d="M18 9.5V6.5H38V9.5"/><path d="M30 6.5V3H35V6.5"/></svg>
+            <i></i></div>
+            <div class="to"><small>QAYERGA</small><strong>DUNYO</strong></div>
+          </div>
+
+          <div id="form-area">
+            <form id="lead-form" novalidate>
+              <div class="field">
+                <label for="name">MEHMON — ISMINGIZ</label>
+                <input id="name" name="name" type="text" autocomplete="name" placeholder="Masalan, Dilnoza" maxlength="80" required>
+                <p class="err" id="name-err" role="alert"></p>
+              </div>
+              <div class="field">
+                <label for="phone">TELEFON RAQAMINGIZ</label>
+                <div class="phone">
+                  <span aria-hidden="true">+998</span>
+                  <input id="phone" name="phone" type="tel" inputmode="numeric" autocomplete="tel-national" placeholder="90 123 45 67" required aria-describedby="phone-err">
+                </div>
+                <p class="err" id="phone-err" role="alert"></p>
+              </div>
+              <div class="hp" aria-hidden="true">
+                <label for="website">Bu maydonni bo‘sh qoldiring</label>
+                <input id="website" name="website" type="text" tabindex="-1" autocomplete="off">
+              </div>
+              <button class="btn submit" type="submit" id="submit">Taklifnomani olish</button>
+              <p class="privacy">Raqamingiz faqat siz bilan bog‘lanish uchun ishlatiladi.</p>
+              <div id="form-alert"></div>
+            </form>
+          </div>
+        </div>
+        <aside class="t-stub" aria-label="Taklif etuvchi">
+          <small>TAKLIF ETADI</small>
+          <strong>Gulnora Ayupova</strong>
+          <a href="tel:+998973401360">+998 97 340 13 60</a>
+          <div class="sep"></div>
+          <small>TELEGRAM KANAL</small>
+          <a href="https://t.me/inkruizguliston" target="_blank" rel="noopener">t.me/inkruizguliston</a>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" aria-labelledby="contact-title">
+    <div class="wrap">
+      <div class="eyebrow">Bog‘lanish</div>
+      <h2 id="contact-title">Savolingiz bormi?</h2>
+      <div class="contacts">
+        <a class="contact" href="tel:+998973401360">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3.5h3.2l1.8 4.6-2.3 1.5a11.5 11.5 0 0 0 6.7 6.7l1.5-2.3 4.6 1.8V19a1.9 1.9 0 0 1-2 1.9A16.5 16.5 0 0 1 3.1 5.5 1.9 1.9 0 0 1 5 3.5z"/></svg>
+          <div><small>TELEFON</small><span>+998 97 340 13 60</span></div>
+        </a>
+        <a class="contact" href="https://t.me/inkruizguliston" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9.5v5h3.2l6.3 4.3V5.2L6.2 9.5z"/><path d="M16 9a4.2 4.2 0 0 1 0 6"/><path d="M18.8 6.3a8 8 0 0 1 0 11.4"/></svg>
+          <div><small>TELEGRAM KANAL</small><span>t.me/inkruizguliston</span></div>
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Bu sahifa inCruises mustaqil hamkori Gulnora Ayupovaga tegishli va inCruises kompaniyasining rasmiy sayti emas. Rasmiy ma’lumot: <a href="https://www.incruises.com" target="_blank" rel="noopener">incruises.com</a>.</p>
+    <p>Narxlar, ballar va a’zolik shartlari kompaniya tomonidan o‘zgartirilishi mumkin.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var started = Date.now();
+  var params = new URLSearchParams(location.search);
+  var fromCard = location.pathname.replace(/\/+$/, '') === '/v';
+  var src = (params.get('src') || params.get('utm_source') || (fromCard ? 'vizitka-QR' : 'sayt')).slice(0, 30);
+  var form = document.getElementById('lead-form');
+  var nameEl = document.getElementById('name');
+  var phoneEl = document.getElementById('phone');
+  var btn = document.getElementById('submit');
+  var alertBox = document.getElementById('form-alert');
+  var FALLBACK = 'Iltimos, to‘g‘ridan-to‘g‘ri qo‘ng‘iroq qiling: <a href="tel:+998973401360">+998 97 340 13 60</a> yoki <a href="https://t.me/inkruizguliston" target="_blank" rel="noopener">Telegram kanal</a>ga yozing.';
+
+  function digitsOnly(v){ return (v || '').replace(/\D/g, ''); }
+  function formatPhone(d){
+    d = d.slice(0, 9);
+    var out = d.slice(0, 2);
+    if (d.length > 2) out += ' ' + d.slice(2, 5);
+    if (d.length > 5) out += ' ' + d.slice(5, 7);
+    if (d.length > 7) out += ' ' + d.slice(7, 9);
+    return out;
+  }
+  phoneEl.addEventListener('input', function(){
+    var d = digitsOnly(phoneEl.value);
+    if (d.length > 9 && d.indexOf('998') === 0) d = d.slice(3);
+    if (d.length > 9) d = d.slice(0, 9);
+    phoneEl.value = formatPhone(d);
+    document.getElementById('phone-err').textContent = '';
+  });
+  nameEl.addEventListener('input', function(){ document.getElementById('name-err').textContent = ''; });
+
+  function escapeHtml(s){ return String(s).replace(/[&<>"']/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); }
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    alertBox.innerHTML = '';
+    var name = nameEl.value.trim().replace(/\s+/g, ' ');
+    var d = digitsOnly(phoneEl.value);
+    var ok = true;
+    if (name.length < 2){ document.getElementById('name-err').textContent = 'Ismingizni yozing.'; ok = false; }
+    if (d.length !== 9){ document.getElementById('phone-err').textContent = 'Raqamni to‘liq kiriting: 9 ta raqam, masalan 90 123 45 67.'; ok = false; }
+    if (!ok){ (name.length < 2 ? nameEl : phoneEl).focus(); return; }
+
+    btn.disabled = true;
+    btn.textContent = 'Yuborilmoqda…';
+    fetch('/api/lead', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name: name, phone: '998' + d, src: src, hp: document.getElementById('website').value, elapsed: Date.now() - started })
+    }).then(function(r){ return r.json().catch(function(){ return { ok: false }; }); })
+      .then(function(res){
+        if (res && res.ok){
+          document.getElementById('form-area').innerHTML =
+            '<div class="done" role="status" tabindex="-1" id="done">' +
+            '<h3>Rahmat, ' + escapeHtml(name.split(' ')[0]) + '!</h3>' +
+            '<p>Taklifnomangiz qabul qilindi. Tez orada +998 ' + formatPhone(d) + ' raqamiga qo‘ng‘iroq qilaman.</p>' +
+            '<a class="btn btn-gold" href="https://t.me/inkruizguliston" target="_blank" rel="noopener">Telegram kanalga o‘tish</a>' +
+            '</div>';
+          var done = document.getElementById('done'); if (done) done.focus();
+        } else {
+          throw new Error((res && res.error) || 'fail');
+        }
+      })
+      .catch(function(){
+        btn.disabled = false;
+        btn.textContent = 'Taklifnomani olish';
+        alertBox.innerHTML = '<p class="alert" role="alert">Hozir yuborib bo‘lmadi. ' + FALLBACK + '</p>';
+      });
+  });
+})();
+</script>
+</body>
+</html>
