@@ -149,6 +149,42 @@
     section.block,.lead-sec{padding:96px 0}
   }
   @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
+  /* ---------- InCruises UI/UX refresh ---------- */
+  .top{position:sticky;top:0;z-index:10;background:rgba(11,27,52,.94);backdrop-filter:blur(16px);border-bottom:1px solid rgba(200,169,107,.16)}
+  .top .wrap{min-height:72px;padding-top:12px;padding-bottom:12px}
+  .brand{gap:5px}
+  .brand b{letter-spacing:-.02em}
+  .site-nav{display:none;align-items:center;gap:24px;margin-left:auto}
+  .site-nav a{color:#C9D0DC;text-decoration:none;font-size:13px;font-weight:500;transition:color .2s ease}
+  .site-nav a:hover{color:var(--gold)}
+  .call{border-color:rgba(200,169,107,.45);font-size:14px;white-space:nowrap}
+  .hero{background:radial-gradient(circle at 82% 18%,rgba(34,78,126,.55),transparent 32%),linear-gradient(135deg,#08172d 0%,#0B1B34 58%,#102b4c 100%)}
+  .hero::after{content:"";position:absolute;inset:auto -10% -120px auto;width:520px;height:260px;border:1px solid rgba(200,169,107,.16);border-radius:50%;transform:rotate(-9deg);pointer-events:none}
+  .hero .wrap{z-index:1}
+  .hero h1{letter-spacing:-.03em;text-shadow:0 10px 28px rgba(0,0,0,.18)}
+  .hero p.lead{max-width:39em}
+  .ctas .btn{box-shadow:0 10px 24px rgba(0,0,0,.14)}
+  .horizon{background:linear-gradient(180deg,#102b4c,#0e203d)}
+  section.block{background:var(--ivory)}
+  section.block:nth-of-type(odd){background:#fbfaf7}
+  .facts{border:0;background:transparent;gap:14px}
+  .fact{border:1px solid rgba(11,27,52,.1);border-radius:14px;background:#fff;box-shadow:0 8px 24px rgba(11,27,52,.05);padding:24px 20px;transition:transform .2s ease,box-shadow .2s ease}
+  .fact:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(11,27,52,.09)}
+  .step{border:1px solid rgba(11,27,52,.1);border-radius:14px;background:#fff;box-shadow:0 8px 22px rgba(11,27,52,.04);padding:28px 24px}
+  .step .num{display:inline-grid;place-items:center;width:48px;height:48px;border-radius:50%;background:#f3ead8;font-size:28px}
+  .step h3{letter-spacing:.16em;margin-top:20px}
+  .lead-sec{background:linear-gradient(135deg,#08172d,#0e2847);position:relative;overflow:hidden}
+  .lead-sec::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 15% 20%,rgba(200,169,107,.13),transparent 30%);pointer-events:none}
+  .lead-sec .wrap{position:relative}
+  .ticket{border-radius:18px;overflow:hidden;box-shadow:0 24px 70px rgba(0,0,0,.34)}
+  .t-main{padding:32px 28px}
+  .t-stub{background:#eee7d9}
+  .contact{border-radius:14px;background:#fff;box-shadow:0 8px 22px rgba(11,27,52,.04);transition:transform .2s ease,border-color .2s ease}
+  .contact:hover{transform:translateY(-2px);border-color:var(--gold-deep)}
+  footer{border-top:1px solid rgba(200,169,107,.18)}
+  @media (min-width:760px){.site-nav{display:flex}.t-main{padding:36px 40px}}
+  @media (max-width:759px){.call span{display:none}.call{width:44px;padding:0;justify-content:center}.call svg{margin:0}}
+  @media (prefers-reduced-motion:reduce){.fact,.contact{transition:none}}
 </style>
 </head>
 <body>
@@ -159,9 +195,14 @@
       <b>inCruises</b>
       <span>MUSTAQIL HAMKOR</span>
     </a>
+    <nav class="site-nav" aria-label="Asosiy navigatsiya">
+      <a href="#about-title">Klub haqida</a>
+      <a href="#how-title">Qanday ishlaydi?</a>
+      <a href="#contact-title">Aloqa</a>
+    </nav>
     <a class="call" href="tel:+998973401360">
       <svg viewBox="0 0 24 24" fill="none" stroke="#C8A96B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3.5h3.2l1.8 4.6-2.3 1.5a11.5 11.5 0 0 0 6.7 6.7l1.5-2.3 4.6 1.8V19a1.9 1.9 0 0 1-2 1.9A16.5 16.5 0 0 1 3.1 5.5 1.9 1.9 0 0 1 5 3.5z"/></svg>
-      Qo‘ng‘iroq qilish
+      <span>Qo‘ng‘iroq qilish</span>
     </a>
   </div>
 </header>
