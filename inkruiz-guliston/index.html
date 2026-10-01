@@ -1,0 +1,546 @@
+<!doctype html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Gulnora Ayupova, inCruises mustaqil hamkori</title>
+<meta name="description" content="inCruises kruiz sayohatlari klubi haqida Gulnora Ayupovadan bepul maslahat. Ism va raqamingizni qoldiring, o‘zim qo‘ng‘iroq qilaman.">
+<meta name="theme-color" content="#0B1B34">
+<meta property="og:title" content="Dunyoni dengizdan kashf eting. Gulnora Ayupova, inCruises">
+<meta property="og:description" content="inCruises kruiz sayohatlari klubi haqida bepul maslahat.">
+<meta property="og:type" content="website">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,500&family=Jost:wght@400;500;600&display=swap">
+<style>
+  /* ---------- Tokens ---------- */
+  :root{
+    /* Rang: dengiz formasi — to‘q ko‘k, oq, latun */
+    --navy:#0B1B34;          /* L0 qorong‘i: hero, CTA, footer */
+    --sea:#11264A;           /* L1 qorong‘i: ufq ostidagi dengiz */
+    --brass:#C8A96B;         /* yagona aksent: asosiy tugma, chiziqlar */
+    --brass-ink:#6E5220;     /* oq/qog‘oz ustidagi kichik latun matn (6.3:1+) */
+    --canvas:#F6F7F9;        /* L0 yorug‘ */
+    --surface:#FFFFFF;       /* L1 yorug‘ */
+    --paper:#F3EEE3;         /* faqat chipta (bosma vizitka bilan bir xil qog‘oz) */
+    --paper-stub:#EAE3D4;
+    --ink:#0B1B34;
+    --muted:#4B5567;
+    --mist:#C9D0DC;          /* to‘q fondagi ikkinchi darajali matn */
+    --hint:#5E6778;
+    --error:#A12A1B;
+    --border:rgba(11,27,52,.12);
+    --border-dark:rgba(201,208,220,.18);
+
+    --serif:'Cormorant Garamond', Garamond, 'Times New Roman', serif;
+    --sans:'Jost', Futura, 'Century Gothic', 'Segoe UI', sans-serif;
+
+    /* Tipografiya: Minor Third, 3 ta og‘irlik */
+    --text-meta:.75rem; --text-secondary:.875rem; --text-body:1rem; --text-lead:1.2rem;
+    --h3:1.2rem; --h2:1.728rem; --h2-lg:2.074rem; --h1:2.488rem; --h1-lg:2.986rem;
+    --w-regular:400; --w-medium:500; --w-semibold:600;
+
+    /* Oraliq: 4/8 ritm */
+    --s1:4px; --s2:8px; --s3:12px; --s4:16px; --s5:24px; --s6:32px; --s7:48px; --s8:64px; --s9:96px;
+    --wrap:1120px; --gutter:20px;
+    --radius:10px;
+    --ease:cubic-bezier(.2,.7,.2,1);
+  }
+
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0;font-family:var(--sans);font-size:var(--text-body);line-height:1.55;font-weight:var(--w-regular);color:var(--ink);background:var(--canvas)}
+  a{color:inherit}
+  svg{display:block}
+  .wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--gutter)}
+  :focus-visible{outline:2px solid var(--brass);outline-offset:3px;border-radius:4px}
+
+  /* ---------- Tugmalar ---------- */
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:var(--s2);min-height:48px;padding:0 var(--s5);border-radius:999px;border:1px solid transparent;font:var(--w-medium) var(--text-body)/1 var(--sans);text-decoration:none;cursor:pointer;transition:background-color .15s var(--ease), border-color .15s var(--ease)}
+  .btn svg{width:18px;height:18px;flex-shrink:0}
+  .btn-brass{background:var(--brass);color:var(--navy)}
+  .btn-brass:hover{background:#D5B97F}
+  .btn-navy{background:var(--navy);color:#fff}
+  .btn-navy:hover{background:#17305A}
+  .btn-line{border-color:var(--border-dark);color:#fff;background:transparent}
+  .btn-line:hover{border-color:var(--mist)}
+  .link{display:inline-flex;align-items:center;gap:var(--s2);min-height:44px;color:inherit;text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px}
+  .link:hover{text-decoration-thickness:2px}
+  .link svg{width:18px;height:18px}
+
+  /* ---------- Nav ---------- */
+  .nav{background:var(--navy);color:#fff}
+  .nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:var(--s4);min-height:72px}
+  .brand{display:flex;flex-direction:column;gap:2px;text-decoration:none;line-height:1.2;min-height:44px;justify-content:center}
+  .brand b{font-size:1.2rem;font-weight:var(--w-semibold)}
+  .brand span{font-size:var(--text-secondary);color:var(--brass)}
+  .nav-call{display:inline-flex;align-items:center;gap:var(--s2);min-height:44px;min-width:44px;justify-content:center;color:#fff;text-decoration:none;font-weight:var(--w-medium)}
+  .nav-call svg{width:20px;height:20px}
+  .nav-call .num{display:none}
+  .nav-call:hover .num{text-decoration:underline;text-underline-offset:4px}
+
+  /* ---------- Hero ---------- */
+  .hero{background:var(--navy);color:#fff;position:relative;overflow:hidden}
+  .hero-grid{display:grid;gap:var(--s6);padding-top:var(--s6);padding-bottom:var(--s7)}
+  .hero h1{font-family:var(--serif);font-weight:var(--w-semibold);font-size:var(--h1);line-height:1.1;letter-spacing:-.01em;margin:0 0 var(--s4);max-width:11ch;text-wrap:balance}
+  .hero .lead{font-size:var(--text-lead);line-height:1.55;color:var(--mist);margin:0 0 var(--s5);max-width:30em;text-wrap:pretty}
+  .host{display:flex;align-items:center;gap:var(--s3);margin:0 0 var(--s4)}
+  .host .rule{width:32px;height:1px;background:var(--brass);flex-shrink:0}
+  .host p{margin:0;color:var(--mist)}
+  .host strong{font-family:var(--serif);font-weight:var(--w-semibold);font-size:1.44rem;color:#fff;line-height:1.2}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:var(--s2) var(--s5);align-items:center}
+
+  /* Ufq va kema — sahifadagi yagona harakat */
+  .horizon{position:relative;height:72px;background:var(--sea)}
+  .horizon::before{content:"";position:absolute;inset:0 0 auto 0;height:1px;background:var(--brass)}
+  .ship{position:absolute;right:max(var(--gutter), calc((100% - var(--wrap)) / 2 + var(--gutter)));bottom:calc(100% - 7px);width:150px;height:auto;animation:sail 2.4s var(--ease) .2s both}
+  @keyframes sail{from{transform:translateX(-55vw);opacity:0}to{transform:none;opacity:1}}
+
+  /* ---------- Chipta-forma (asosiy element) ---------- */
+  .ticket{position:relative;display:grid;grid-template-columns:minmax(0,1fr);background:var(--paper);color:var(--ink);border-radius:var(--radius);box-shadow:0 24px 48px rgba(0,0,0,.28)}
+  .t-main{position:relative;padding:var(--s5)}
+  .t-head{display:flex;justify-content:space-between;align-items:baseline;gap:var(--s3);padding-bottom:var(--s3);border-bottom:1px solid var(--brass)}
+  .t-head h2{margin:0;font:var(--w-semibold) var(--text-body)/1.25 var(--sans)}
+  .t-head span{font-size:var(--text-secondary);font-weight:var(--w-medium);color:var(--brass-ink)}
+  .route{display:grid;grid-template-columns:auto 1fr auto;align-items:end;gap:var(--s3);margin:var(--s4) 0 var(--s5)}
+  .route small{display:block;font-size:var(--text-meta);line-height:1.4;color:var(--muted)}
+  .route b{display:block;font-family:var(--serif);font-weight:var(--w-semibold);font-size:var(--h2);line-height:1;letter-spacing:.02em}
+  .route .to{text-align:right}
+  .route .path{display:flex;align-items:center;gap:var(--s2);padding-bottom:6px}
+  .route .path i{flex:1;border-top:2px dotted #8C93A3}
+  .route .path svg{width:36px;height:auto}
+
+  form{display:grid;gap:var(--s4)}
+  .field label{display:block;font-size:var(--text-secondary);font-weight:var(--w-medium);color:var(--ink);margin-bottom:var(--s1)}
+  .control{display:flex;align-items:stretch;border-bottom:1.5px solid var(--ink);transition:border-color .15s var(--ease)}
+  .control:focus-within{border-bottom-color:var(--brass-ink);background:rgba(200,169,107,.10)}
+  .control input{flex:1;min-width:0;min-height:48px;border:0;background:transparent;padding:var(--s2) 2px;font:var(--w-regular) var(--text-lead)/1.3 var(--sans);color:var(--ink);border-radius:0}
+  .control input:focus{outline:none}
+  .control input::placeholder{color:var(--hint)}
+  .control .prefix{display:flex;align-items:center;padding:0 var(--s2) 0 2px;font-size:var(--text-lead);color:var(--ink)}
+  .field.invalid .control{border-bottom-color:var(--error)}
+  .msg{margin:var(--s1) 0 0;font-size:var(--text-secondary);line-height:1.5;color:var(--muted);min-height:1.5em}
+  .field.invalid .msg{color:var(--error)}
+  .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+  .submit{width:100%;min-height:52px}
+  .submit[aria-busy="true"]{cursor:progress}
+  .submit .spin{width:18px;height:18px;border:2px solid rgba(255,255,255,.35);border-top-color:#fff;border-radius:50%;animation:spin .8s linear infinite;display:none}
+  .submit[aria-busy="true"] .spin{display:block}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .privacy{margin:0;font-size:var(--text-secondary);color:var(--muted)}
+  .alert{margin:0;padding:var(--s3) var(--s4);border:1px solid rgba(161,42,27,.35);background:#FBEFEA;border-radius:8px;font-size:var(--text-secondary);line-height:1.5}
+  .alert a{font-weight:var(--w-medium)}
+
+  .t-stub{position:relative;padding:var(--s5);background:var(--paper-stub);border-top:2px dashed #8C93A3;border-radius:0 0 var(--radius) var(--radius);display:grid;gap:var(--s1)}
+  .t-stub::before,.t-stub::after{content:"";position:absolute;top:-11px;width:20px;height:20px;border-radius:50%;background:var(--navy)}
+  .t-stub::before{left:-10px}.t-stub::after{right:-10px}
+  .t-stub small{font-size:var(--text-meta);color:var(--muted)}
+  .t-stub strong{font-family:var(--serif);font-weight:var(--w-semibold);font-size:1.44rem;line-height:1.2}
+  .t-stub a{display:inline-flex;align-items:center;min-height:44px;font-size:var(--text-body);font-weight:var(--w-medium);text-decoration:none;white-space:nowrap}
+  .t-stub a:hover{text-decoration:underline;text-underline-offset:4px}
+
+  /* Muvaffaqiyat: muhr */
+  .done{padding-top:var(--s2)}
+  .done h3{font-family:var(--serif);font-weight:var(--w-semibold);font-size:var(--h2);line-height:1.2;margin:0 0 var(--s2)}
+  .done p{margin:0 0 var(--s5);color:var(--muted);max-width:28em}
+  .done:focus{outline:none}
+  .stamp{position:absolute;right:var(--s4);top:50%;margin-top:-50px;width:100px;height:100px;display:grid;place-items:center;text-align:center;border:2px solid var(--brass-ink);border-radius:50%;color:var(--brass-ink);transform:rotate(-12deg);font:var(--w-semibold) var(--text-meta)/1.25 var(--sans);letter-spacing:.06em;animation:stamp .35s var(--ease) .15s both;pointer-events:none}
+  .stamp b{display:block;font-size:var(--text-secondary);font-weight:var(--w-semibold)}
+  .stamp small{display:block;margin-top:2px;font-size:var(--text-meta);letter-spacing:.02em}
+  @keyframes stamp{from{transform:rotate(-12deg) scale(1.3);opacity:0}to{transform:rotate(-12deg) scale(1);opacity:1}}
+
+  /* ---------- Yorug‘ bo‘limlar ---------- */
+  .section{padding:var(--s8) 0}
+  .section h2{font-family:var(--serif);font-weight:var(--w-semibold);font-size:var(--h2);line-height:1.2;margin:0 0 var(--s4);text-wrap:balance}
+  .prose{max-width:62ch;color:#2B3446;margin:0;text-wrap:pretty}
+  .about{display:grid;gap:var(--s6)}
+  .manifest{margin:0;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);box-shadow:0 1px 3px rgba(11,27,52,.05);padding:var(--s2) var(--s5)}
+  .manifest div{display:flex;align-items:baseline;gap:var(--s3);padding:var(--s3) 0;border-bottom:1px solid var(--border)}
+  .manifest div:last-of-type{border-bottom:0}
+  .manifest dt{color:var(--muted);flex:1;display:flex;align-items:baseline;gap:var(--s2);min-width:0}
+  .manifest dt::after{content:"";flex:1;border-bottom:1px dotted #A8AFBC;transform:translateY(-4px);min-width:16px}
+  .manifest dd{margin:0;font-weight:var(--w-medium);text-align:right}
+  .source{margin:var(--s3) 0 0;font-size:var(--text-meta);line-height:1.4;color:var(--muted)}
+
+  .voyage{list-style:none;margin:var(--s6) 0 0;padding:0;display:grid;gap:0;position:relative}
+  .voyage li{position:relative;display:grid;grid-template-columns:40px minmax(0,1fr);gap:var(--s4);padding-bottom:var(--s6)}
+  .voyage li:last-child{padding-bottom:0}
+  .voyage li::before{content:"";position:absolute;left:19px;top:40px;bottom:0;border-left:2px dotted #A8AFBC}
+  .voyage li:last-child::before{display:none}
+  .port{width:40px;height:40px;border-radius:50%;border:1.5px solid var(--brass-ink);display:grid;place-items:center;font:var(--w-semibold) var(--text-body)/1 var(--sans);color:var(--brass-ink);background:var(--canvas);position:relative}
+  .voyage h3{margin:6px 0 var(--s1);font-size:var(--h3);font-weight:var(--w-semibold);line-height:1.25}
+  .voyage p{margin:0;color:#2B3446;max-width:44ch}
+  .note{display:flex;gap:var(--s3);align-items:flex-start;margin:var(--s6) 0 0;max-width:62ch;color:#2B3446}
+  .note svg{width:20px;height:20px;flex-shrink:0;margin-top:3px;color:var(--brass-ink)}
+
+  /* ---------- Yakuniy CTA ---------- */
+  .closing{background:var(--navy);color:#fff;padding:var(--s8) 0}
+  .closing h2{font-family:var(--serif);font-weight:var(--w-semibold);font-size:var(--h2);line-height:1.2;margin:0 0 var(--s3)}
+  .closing p{margin:0 0 var(--s5);color:var(--mist);max-width:40em}
+  .closing-actions{display:flex;flex-wrap:wrap;gap:var(--s2) var(--s5);align-items:center}
+
+  footer{background:var(--navy);color:var(--mist);font-size:var(--text-secondary);padding:var(--s6) 0 var(--s7);border-top:1px solid var(--border-dark)}
+  footer p{margin:0 0 var(--s2);max-width:62ch}
+  footer a{color:#fff}
+
+  /* ---------- Mobil pastki panel ---------- */
+  .dock{position:fixed;left:0;right:0;bottom:0;z-index:20;display:flex;gap:var(--s2);padding:var(--s3) var(--gutter) calc(var(--s3) + env(safe-area-inset-bottom));background:var(--navy);border-top:1px solid var(--border-dark);transform:translateY(110%);visibility:hidden;transition:transform .25s var(--ease), visibility 0s linear .25s}
+  .dock.show{transform:none;visibility:visible;transition:transform .25s var(--ease), visibility 0s}
+  .dock .btn{flex:1;min-height:48px;padding:0 var(--s3)}
+  .dock .call{flex:0 0 auto;width:48px;padding:0}
+
+  @media (max-width:959px){ footer{padding-bottom:calc(var(--s7) + 76px + env(safe-area-inset-bottom))} }
+
+  /* ---------- Kengroq ekranlar ---------- */
+  @media (min-width:600px){
+    .nav-call .num{display:inline}
+    .t-main{padding:var(--s6)}
+    .route b{font-size:var(--h2-lg)}
+  }
+  @media (min-width:960px){
+    :root{--gutter:32px}
+    .hero h1{font-size:var(--h1-lg)}
+    .hero-grid{grid-template-columns:minmax(0,1fr) minmax(0,560px);align-items:center;gap:var(--s8);padding-top:var(--s8);padding-bottom:var(--s9)}
+    .ticket{grid-template-columns:minmax(0,1fr) 200px}
+    .t-stub{border-top:0;border-left:2px dashed #8C93A3;border-radius:0 var(--radius) var(--radius) 0;align-content:center}
+    .t-stub::before,.t-stub::after{left:-11px;right:auto}
+    .t-stub::before{top:-10px}.t-stub::after{top:auto;bottom:-10px}
+    .t-stub .stamp{right:auto;left:50%;margin-left:-50px;top:auto;bottom:var(--s6);margin-top:0}
+    .t-stub.stamped{align-content:start;padding-top:var(--s7)}
+    .horizon{height:96px}
+    .ship{width:190px;bottom:calc(100% - 9px)}
+    .section{padding:var(--s9) 0}
+    .section h2,.closing h2{font-size:var(--h2-lg)}
+    .about{grid-template-columns:minmax(0,1fr) minmax(0,460px);gap:var(--s8);align-items:start}
+    .voyage{grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s6)}
+    .voyage li{grid-template-columns:minmax(0,1fr);gap:var(--s3);padding-bottom:0}
+    .voyage li::before{left:48px;right:calc(-1 * var(--s6));top:19px;bottom:auto;border-left:0;border-top:2px dotted #A8AFBC}
+    .dock{display:none}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .ship,.stamp{animation:none}
+    .dock,.dock.show,.btn,.control{transition:none}
+    .submit .spin{animation:none}
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="inCruises mustaqil hamkori, bosh sahifa">
+      <b>inCruises</b>
+      <span>Mustaqil hamkor</span>
+    </a>
+    <a class="nav-call" href="tel:+998973401360" aria-label="Qo‘ng‘iroq qilish: +998 97 340 13 60">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#C8A96B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3.5h3.2l1.8 4.6-2.3 1.5a11.5 11.5 0 0 0 6.7 6.7l1.5-2.3 4.6 1.8V19a1.9 1.9 0 0 1-2 1.9A16.5 16.5 0 0 1 3.1 5.5 1.9 1.9 0 0 1 5 3.5z"/></svg>
+      <span class="num">+998 97 340 13 60</span>
+    </a>
+  </div>
+</header>
+
+<main>
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="wrap hero-grid">
+      <div>
+        <h1 id="hero-title">Dunyoni dengizdan kashf eting.</h1>
+        <p class="lead">inCruises — taklif asosida a’zo bo‘linadigan kruiz sayohatlari klubi: kruizlar, mehmonxonalar va kurortlar. Klub qanday ishlashi va shartlarini bepul tushuntirib beraman.</p>
+        <div class="host">
+          <span class="rule" aria-hidden="true"></span>
+          <p><strong>Gulnora Ayupova</strong><br>inCruises mustaqil hamkori</p>
+        </div>
+        <div class="hero-actions">
+          <a class="link" href="https://t.me/inkruizguliston" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#C8A96B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 3.5 2.8 10.6l6.9 2.6 2.6 6.9z"/><path d="M9.7 13.2l5.6-5.6"/></svg>
+            Telegram kanalni ochish
+          </a>
+        </div>
+      </div>
+
+      <div class="ticket" id="forma">
+        <div class="t-main">
+          <div class="t-head">
+            <h2 id="form-title">Bepul maslahatga yozilish</h2>
+            <span>inCruises</span>
+          </div>
+          <div class="route" aria-hidden="true">
+            <div><small>Qayerdan</small><b>UZB</b></div>
+            <div class="path"><i></i>
+              <svg viewBox="0 0 60 26" fill="none" stroke="#6E5220" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"><path d="M3 17H57L52.5 22.5H8.5Z"/><path d="M9 17V13H50L52 17"/><path d="M13 13V9.5H45L46.5 13"/><path d="M18 9.5V6.5H38V9.5"/><path d="M30 6.5V3H35V6.5"/></svg>
+            <i></i></div>
+            <div class="to"><small>Qayerga</small><b>DUNYO</b></div>
+          </div>
+
+          <div id="form-area" aria-live="polite">
+            <form id="lead-form" novalidate aria-labelledby="form-title">
+              <div class="field" id="f-name">
+                <label for="name">Ismingiz</label>
+                <div class="control">
+                  <input id="name" name="name" type="text" autocomplete="name" autocapitalize="words" enterkeyhint="next" required aria-describedby="name-msg">
+                </div>
+                <p class="msg" id="name-msg"></p>
+              </div>
+              <div class="field" id="f-phone">
+                <label for="phone">Telefon raqamingiz</label>
+                <div class="control">
+                  <span class="prefix" aria-hidden="true">+998</span>
+                  <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel-national" enterkeyhint="send" placeholder="90 123 45 67" required aria-describedby="phone-msg">
+                </div>
+                <p class="msg" id="phone-msg">9 ta raqam, kod bilan birga</p>
+              </div>
+              <div class="hp" aria-hidden="true">
+                <label for="website">Bu maydonni bo‘sh qoldiring</label>
+                <input id="website" name="website" type="text" tabindex="-1" autocomplete="off">
+              </div>
+              <button class="btn btn-navy submit" type="submit" id="submit"><span class="spin" aria-hidden="true"></span><span class="label">Maslahatga yozilish</span></button>
+              <p class="privacy">Raqamingiz faqat siz bilan bog‘lanish uchun ishlatiladi.</p>
+              <div id="form-alert"></div>
+            </form>
+          </div>
+        </div>
+        <aside class="t-stub" aria-label="Taklif etuvchi">
+          <small>Taklif etadi</small>
+          <strong>Gulnora Ayupova</strong>
+          <a href="tel:+998973401360">+998 97 340 13 60</a>
+        </aside>
+      </div>
+    </div>
+    <div class="horizon" aria-hidden="true">
+      <svg class="ship" viewBox="0 0 60 26" fill="none" stroke="#C8A96B" stroke-width="1" stroke-linejoin="round" stroke-linecap="round">
+        <path d="M3 17H57L52.5 22.5H8.5Z" fill="#0B1B34"/>
+        <path d="M9 17V13H50L52 17"/>
+        <path d="M13 13V9.5H45L46.5 13"/>
+        <path d="M18 9.5V6.5H38V9.5"/>
+        <path d="M30 6.5V3H35V6.5"/>
+        <path d="M12.5 19.8H48" stroke-dasharray="1.1 1.9"/>
+      </svg>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="about-title">
+    <div class="wrap about">
+      <div>
+        <h2 id="about-title">inCruises nima?</h2>
+        <p class="prose">inCruises — obuna asosida ishlaydigan sayohat klubi. Klubning o‘z kemalari yo‘q: u kruiz kompaniyalari, mehmonxona va kurortlar bilan hamkorlik qilib, a’zolariga maxsus a’zolik narxlarini taqdim etadi.</p>
+      </div>
+      <div>
+        <dl class="manifest">
+          <div><dt>Tashkil topgan</dt><dd>2016-yil</dd></div>
+          <div><dt>Kompaniya</dt><dd>inGroup International</dd></div>
+          <div><dt>Bosh ofis</dt><dd>Puerto-Riko</dd></div>
+          <div><dt>Band qilingan mehmonlar</dt><dd>700 000+</dd></div>
+          <div><dt>Kruiz, mehmonxona va kurort variantlari</dt><dd>≈200 000</dd></div>
+          <div><dt>Xizmat tillari</dt><dd>17</dd></div>
+        </dl>
+        <p class="source">Raqamlar inCruises 2026-yilda e’lon qilgan ma’lumotlarga asoslangan.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0" aria-labelledby="how-title">
+    <div class="wrap">
+      <h2 id="how-title">Qanday ishlaydi?</h2>
+      <ol class="voyage">
+        <li>
+          <span class="port" aria-hidden="true">1</span>
+          <div>
+            <h3>Taklif</h3>
+            <p>Klubga a’zolik taklif orqali bo‘ladi. Siz menga yozasiz yoki qo‘ng‘iroq qilasiz — ro‘yxatdan o‘tishda yordam beraman.</p>
+          </div>
+        </li>
+        <li>
+          <span class="port" aria-hidden="true">2</span>
+          <div>
+            <h3>A’zolik</h3>
+            <p>A’zolar klub narxlaridan foydalanadi va a’zolik davomida ballar to‘playdi. Ballar bilan sayohat narxining bir qismini qoplash mumkin.</p>
+          </div>
+        </li>
+        <li>
+          <span class="port" aria-hidden="true">3</span>
+          <div>
+            <h3>Sayohat</h3>
+            <p>Kruiz, mehmonxona yoki kurortni tanlaysiz. Yo‘nalish tanlash va bron qilishda yoningizda bo‘laman.</p>
+          </div>
+        </li>
+      </ol>
+      <p class="note">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5"/><path d="M12 7.5v.01"/></svg>
+        <span>Oylik to‘lov, ballar qanday ishlashi va a’zolikni bekor qilish tartibini maslahatda batafsil tushuntiraman. A’zo bo‘lishdan oldin a’zolik shartnomasini albatta o‘qib chiqing.</span>
+      </p>
+    </div>
+  </section>
+
+  <section class="closing" aria-labelledby="closing-title">
+    <div class="wrap">
+      <h2 id="closing-title">Savolingiz bormi?</h2>
+      <p>Qo‘ng‘iroq qiling yoki ismingizni qoldiring — o‘zim qayta qo‘ng‘iroq qilaman.</p>
+      <div class="closing-actions">
+        <a class="btn btn-brass" href="#forma" data-goto-form>Maslahatga yozilish</a>
+        <a class="link" href="tel:+998973401360">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#C8A96B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3.5h3.2l1.8 4.6-2.3 1.5a11.5 11.5 0 0 0 6.7 6.7l1.5-2.3 4.6 1.8V19a1.9 1.9 0 0 1-2 1.9A16.5 16.5 0 0 1 3.1 5.5 1.9 1.9 0 0 1 5 3.5z"/></svg>
+          +998 97 340 13 60
+        </a>
+        <a class="link" href="https://t.me/inkruizguliston" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#C8A96B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 3.5 2.8 10.6l6.9 2.6 2.6 6.9z"/><path d="M9.7 13.2l5.6-5.6"/></svg>
+          t.me/inkruizguliston
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Bu sahifa inCruises mustaqil hamkori Gulnora Ayupovaga tegishli va inCruises kompaniyasining rasmiy sayti emas. Rasmiy ma’lumot: <a href="https://www.incruises.com" target="_blank" rel="noopener">incruises.com</a>.</p>
+    <p>Narxlar, ballar va a’zolik shartlari kompaniya tomonidan o‘zgartirilishi mumkin.</p>
+  </div>
+</footer>
+
+<nav class="dock" id="dock" aria-label="Tezkor amallar">
+  <a class="btn btn-line call" href="tel:+998973401360" aria-label="Qo‘ng‘iroq qilish: +998 97 340 13 60">
+    <svg viewBox="0 0 24 24" fill="none" stroke="#C8A96B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3.5h3.2l1.8 4.6-2.3 1.5a11.5 11.5 0 0 0 6.7 6.7l1.5-2.3 4.6 1.8V19a1.9 1.9 0 0 1-2 1.9A16.5 16.5 0 0 1 3.1 5.5 1.9 1.9 0 0 1 5 3.5z"/></svg>
+  </a>
+  <a class="btn btn-brass" href="#forma" data-goto-form>Maslahatga yozilish</a>
+</nav>
+
+<script>
+(function(){
+  var started = Date.now();
+  var params = new URLSearchParams(location.search);
+  var fromCard = location.pathname.replace(/\/+$/, '') === '/v';
+  var src = (params.get('src') || params.get('utm_source') || (fromCard ? 'vizitka-QR' : 'sayt')).slice(0, 30);
+  var reduceMotion = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  var form = document.getElementById('lead-form');
+  var btn = document.getElementById('submit');
+  var btnLabel = btn.querySelector('.label');
+  var alertBox = document.getElementById('form-alert');
+  var dock = document.getElementById('dock');
+  var sending = false;
+
+  function digits(v){ return (v || '').replace(/\D/g, ''); }
+  function localDigits(v){
+    var d = digits(v);
+    if (d.length > 9 && d.indexOf('998') === 0) d = d.slice(3);
+    return d;
+  }
+  function pretty(d){ return d.slice(0,2) + ' ' + d.slice(2,5) + ' ' + d.slice(5,7) + ' ' + d.slice(7,9); }
+  function escapeHtml(s){ return String(s).replace(/[&<>"']/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); }
+
+  // Maydonlar: pristine -> touched -> valid/invalid (blur-first validatsiya)
+  var fields = {
+    name: {
+      el: document.getElementById('name'), box: document.getElementById('f-name'), msg: document.getElementById('name-msg'),
+      helper: '', touched: false,
+      check: function(v){ return v.trim().replace(/\s+/g,' ').length >= 2 ? '' : 'Ismingizni yozing, kamida 2 ta harf.'; }
+    },
+    phone: {
+      el: document.getElementById('phone'), box: document.getElementById('f-phone'), msg: document.getElementById('phone-msg'),
+      helper: '9 ta raqam, kod bilan birga', touched: false,
+      check: function(v){ return localDigits(v).length === 9 ? '' : '9 ta raqam kiriting, masalan 90 123 45 67.'; }
+    }
+  };
+
+  function showError(f, text){ f.box.classList.add('invalid'); f.el.setAttribute('aria-invalid','true'); f.msg.textContent = text; }
+  function clearError(f){ f.box.classList.remove('invalid'); f.el.removeAttribute('aria-invalid'); f.msg.textContent = f.helper; }
+  function validate(f){
+    var err = f.check(f.el.value);
+    if (err){ showError(f, err); return false; }
+    clearError(f); return true;
+  }
+
+  Object.keys(fields).forEach(function(key){
+    var f = fields[key];
+    f.el.addEventListener('blur', function(){
+      if (key === 'phone'){
+        var d = localDigits(f.el.value);
+        if (d.length === 9) f.el.value = pretty(d);   // blurda normallashtirish — yozish paytida kursorga tegmaymiz
+      }
+      if (!f.el.value.trim() && !f.touched) return;   // bo‘sh maydondan shunchaki o‘tib ketsa — jim
+      f.touched = true; validate(f);
+    });
+    f.el.addEventListener('focus', function(){ if (f.box.classList.contains('invalid') && !f.keepError) clearError(f); f.keepError = false; });
+    f.el.addEventListener('input', function(){ if (f.box.classList.contains('invalid')) clearError(f); });
+  });
+
+  function setBusy(on){
+    sending = on;
+    btn.setAttribute('aria-busy', on ? 'true' : 'false');
+    btnLabel.textContent = on ? 'Yuborilmoqda…' : 'Maslahatga yozilish';
+  }
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    if (sending) return;                 // tugma hech qachon disabled emas, faqat qayta yuborishni bloklaymiz
+    alertBox.innerHTML = '';
+    var firstBad = null;
+    ['name','phone'].forEach(function(k){
+      var f = fields[k]; f.touched = true;
+      if (!validate(f) && !firstBad) firstBad = f;
+    });
+    if (firstBad){
+      firstBad.keepError = true;        // fokus xato xabarini o‘chirib yubormasin
+      firstBad.el.focus({ preventScroll: true });
+      firstBad.el.scrollIntoView({ block: 'center', behavior: reduceMotion ? 'auto' : 'smooth' });
+      return;
+    }
+
+    var name = fields.name.el.value.trim().replace(/\s+/g, ' ');
+    var d = localDigits(fields.phone.el.value);
+    setBusy(true);
+    fetch('/api/lead', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name: name, phone: '998' + d, src: src, hp: document.getElementById('website').value, elapsed: Date.now() - started })
+    }).then(function(r){ return r.json().catch(function(){ return { ok: false }; }); })
+      .then(function(res){
+        if (!res || !res.ok) throw new Error((res && res.error) || 'fail');
+        var today = new Date().toLocaleDateString('ru-RU');
+        document.getElementById('form-area').innerHTML =
+          '<div class="done" tabindex="-1" id="done">' +
+            '<h3>Rahmat, ' + escapeHtml(name.split(' ')[0]) + '!</h3>' +
+            '<p>Siz maslahatga yozildingiz. Gulnora +998 ' + pretty(d) + ' raqamiga qo‘ng‘iroq qiladi.</p>' +
+            '<a class="btn btn-navy" href="https://t.me/inkruizguliston" target="_blank" rel="noopener">Telegram kanalni ochish</a>' +
+          '</div>';
+        var stub = document.querySelector('.t-stub');
+        if (stub && !stub.querySelector('.stamp')){
+          var st = document.createElement('div'); st.className = 'stamp'; st.setAttribute('aria-hidden','true');
+          st.innerHTML = '<span><b>QABUL</b><b>QILINDI</b><small>' + today + '</small></span>';
+          stub.appendChild(st); stub.classList.add('stamped');
+        }
+        var done = document.getElementById('done'); if (done) done.focus();
+        document.body.classList.add('lead-sent');
+        dock.classList.remove('show');
+      })
+      .catch(function(){
+        setBusy(false);
+        alertBox.innerHTML = '<p class="alert" role="alert">Ariza yuborilmadi. Internetni tekshirib, qayta bosing yoki to‘g‘ridan-to‘g‘ri qo‘ng‘iroq qiling: <a href="tel:+998973401360">+998 97 340 13 60</a>.</p>';
+      });
+  });
+
+  // "Maslahatga yozilish" havolalari: formaga olib borib, ism maydoniga fokus
+  document.querySelectorAll('[data-goto-form]').forEach(function(a){
+    a.addEventListener('click', function(e){
+      var nameEl = document.getElementById('name');
+      if (!nameEl) return;               // ariza yuborilgan bo‘lsa — oddiy havola sifatida ishlaydi
+      e.preventDefault();
+      document.getElementById('forma').scrollIntoView({ block: 'start', behavior: reduceMotion ? 'auto' : 'smooth' });
+      setTimeout(function(){ nameEl.focus({ preventScroll: true }); }, reduceMotion ? 0 : 450);
+    });
+  });
+
+  // Mobil pastki panel: chipta ekrandan tepaga chiqib ketganda ko‘rinadi
+  var ticket = document.getElementById('forma');
+  if ('IntersectionObserver' in window){
+    new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        var passed = en.boundingClientRect.top < 0;
+        dock.classList.toggle('show', !en.isIntersecting && passed && !document.body.classList.contains('lead-sent'));
+      });
+    }, { threshold: 0 }).observe(ticket);
+  }
+})();
+</script>
+</body>
+</html>
